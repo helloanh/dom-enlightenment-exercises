@@ -68,6 +68,8 @@ DocumentType 10
 ### 1.6 Getting a Node's Value  
 + nodeValue property returns *null* for most of the node types, expect Text and Comment  
 
++ the nodeValue is centered for dealing with texts   
+
 + logs null for DOCUMENT_TYPE_NODE, DOCUMENT_NODE, DOCUMENT_FRAGMENT_NODE, ELEMENT_NODE with the code below in your browser */  
 
 ``` javascript
@@ -96,6 +98,27 @@ undefined
 
 */
 ```
+
+### 1.7 Using JS Methods to Create Element and Text Nodes  
+
++ browser parses html doc, contructs nodes and tree based on contents of html file  
+
++ the browser deals with the creation of nodes for initial loading of the html document  
+
++ however, it is possible to create your own nodes using JS  
+
+** There are two methods to allow us to programmically create Element and Text nodes using JS: **    
+		+ createElement()  
+		+ createTextNode()  
+
++ other methods are available like createAttribute() and createComment() but they are not commonly used    
+
++ createAttribute() meothod is deprecated and shouldn't be used    
+
+### 1.7 
+
+
+
 
 
 
