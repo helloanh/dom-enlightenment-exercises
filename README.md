@@ -292,7 +292,50 @@ VM13778:2
 undefined 
 ```
 
+Replacing an element or text node uses the same structure  
 
+
+```
+var divA = document.getElementById('A')
+undefined
+
+divA
+<div id=​"A">​Hi​</div>​
+
+var newSpan = document.createElement('span');
+undefined
+
+newSpan.textContent = 'inside span'
+"inside span"
+
+// using replaceChild 
+divA.parentNode.replaceChild(newSpan, divA);
+<div id=​"A">​Hi​</div>​
+
+var divB = document.getElementById('B').firstChild;
+undefined
+
+var newText = document.createTextNode('buddy')
+undefined
+
+// replace text node 
+
+divB.parentNode.replaceChild(newText, divB);
+"Dude"
+console.log(document.body.innerHTML);
+
+VM15015:2 
+		...
+		
+		<!-- for testing ex 11 -->
+		<span>inside span</span>
+		<div id="B">buddy</div>
+
+		...
+
+undefined
+
+```
 	
 
 
