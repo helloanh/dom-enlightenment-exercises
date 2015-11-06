@@ -70,7 +70,7 @@ DocumentType 10
 
 + the nodeValue is centered for dealing with texts   
 
-+ logs null for DOCUMENT_TYPE_NODE, DOCUMENT_NODE, DOCUMENT_FRAGMENT_NODE, ELEMENT_NODE with the code below in your browser */  
++ logs null for DOCUMENT_TYPE_NODE, DOCUMENT_NODE, DOCUMENT_FRAGMENT_NODE, ELEMENT_NODE with the code below in your browser   
 
 ``` javascript
 	console.log(document.doctype.nodeValue); 
@@ -101,21 +101,60 @@ undefined
 
 ### 1.7 Using JS Methods to Create Element and Text Nodes  
 
-+ browser parses html doc, contructs nodes and tree based on contents of html file  
++  browser parses html doc, contructs nodes and tree based on contents of html file  
 
-+ the browser deals with the creation of nodes for initial loading of the html document  
++  the browser deals with the creation of nodes for initial loading of the html document  
 
-+ however, it is possible to create your own nodes using JS  
++  however, it is possible to create your own nodes using JS  
 
-** There are two methods to allow us to programmically create Element and Text nodes using JS: **    
-		+ createElement()  
-		+ createTextNode()  
+**There are two methods to allow us to programmically create Element and Text nodes using JS:**      
+	+  createElement()  
+	+  createTextNode()  
 
 + other methods are available like createAttribute() and createComment() but they are not commonly used    
 
 + createAttribute() meothod is deprecated and shouldn't be used    
 
-### 1.7 
+### 1.8 Using JS Strings to Create and Add Element and Text Nodes to the DOM  
+
++  the innerHTML, outerHTML, textContent, and insertAdjacentHTML() properties and methods are used to create and add nodes to the DOM  
+
+``` javascript
+
+// more practice
+	// img tag is placed inside the div container with the id='A'
+	document.getElementById('A').innerHTML = '<img src="http://s3.amazonaws.com/digitaltrends-uploads-prod/2015/04/imgur-embed-2.jpg">image</img>';
+
+	// the new div completely replaced the old div container with nested img inside
+	document.getElementById('A').outerHTML = '<div id="A" class="new">I just replaced the img tag with this div </div>'
+
+```
+
++ try using *insertAdjacentHTML() method for more precision  
++ this method only works with Element nodes, use it to insert nodes before the beginning tag, after the beginning tag, before the end tag, and after the end tag  
+
+for example  
+
+``` javascript
+
+// put this in the html:  <i> id="elm">how</i>
+
+// try out in the console
+var elm = document.getElementById('elm');
+elm.insertAdjacentHTML('beforebegin', '<span>Hey-</span>');
+elm.insertAdjacentHTML('afterbegin', '<span>dude-</span>');
+elm.insertAdjacentHTML('beforeend', '<span>-are</span>');
+elm.insertAdjacentHTML('afterend', '<span>-you?</span>');
+console.log(document.body.innerHTML);
+/* logs
+<span>Hey-</span><i id="A"><span>dude-</span>how<span>-are</span></i>
+<span>-you?</span>
+*/
+
+
+```
+
+
 
 
 
