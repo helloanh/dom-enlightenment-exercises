@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 	<body>
+		<i id="elm">how</i>
+		<p> Hi </p>
 		<div id="A"></div>
 		<span id="B"></span>
 		<div id="C"></div>
@@ -28,7 +30,7 @@
 		/* create a text node and replace the div#E with the text node (notice div#E is gone) */
 
 		document.getElementById('E').outerText = 'real!';
-		console.log(document.body.innerHTML);
+		//console.log(document.body.innerHTML);
 
 		/* logs
 		<div id="A"><strong>Hi</strong></div>

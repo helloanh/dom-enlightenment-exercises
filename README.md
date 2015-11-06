@@ -130,7 +130,7 @@ undefined
 
 ```
 
-+ try using *insertAdjacentHTML() method for more precision  
++ try using *insertAdjacentHTML()* method for more precision  
 + this method only works with Element nodes, use it to insert nodes before the beginning tag, after the beginning tag, before the end tag, and after the end tag  
 
 for example  
@@ -155,7 +155,18 @@ console.log(document.body.innerHTML);
 ```
 
 
+### 1.9 Extracting Parts of the DOM Tree as Javascript Strings   
 
++  the exact same properties (innerHTML, outerHTML, textContent) for adding nodes can be used to extract parts of the DOM  
+
+``` javascript
+console.log(document.getElementById('A').innerHTML);
+console.log(document.getElementById('A').outerHTML);
+console.log(document.getElementById('A').textContent);
+
+``` 
+
++ the textContent, innerText, and outerText while being read, will return all the text nodes contained within the selected node  
 
 
 
