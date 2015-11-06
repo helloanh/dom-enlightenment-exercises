@@ -53,7 +53,7 @@ Object < Node < DocumentFragment
 ### 1.5 Identify Type and Name of a Node  
 + every node has a nodeType and nodeName property that is inherited from Node object.  
 + for ex, **Text** nodes have a nodeType code of 3 and a nodeName value of #text  
-+  the numric value 3 is a numveric code representing the type of underlying object the node represents  
++  the numeric value 3 is a numeric code representing the type of underlying object the node represents  
 
 + it is good to memorize these 5 nodeTypes and nodeNames  
 + (see ex5 html file) 
@@ -63,7 +63,39 @@ Text 3
 Attr 2  
 HTMLDocument 9  
 DocumentFragment 11  
-DocumentType 10  
+DocumentType 10    
+
+### 1.6 Getting a Node's Value  
++ nodeValue property returns *null* for most of the node types, expect Text and Comment  
+
++ logs null for DOCUMENT_TYPE_NODE, DOCUMENT_NODE, DOCUMENT_FRAGMENT_NODE, ELEMENT_NODE with the code below in your browser */  
+
+``` javascript
+	console.log(document.doctype.nodeValue); 
+	console.log(document.nodeValue);
+	console.log(document.createDocumentFragment().nodeValue);
+	console.log(document.querySelector('a').nodeValue);
+
+	// logs string of text 
+	console.log(document.querySelector('a').firstChild.nodeValue);  
+
+/* output
+
+console.log(document.doctype.nodeValue);
+conole.log(document.nodeValue);
+console.log(document.createDocumentFragment().nodeValue);
+console.log(document.querySelector('a').nodeValue);
+VM658:2 null
+VM658:3 null
+VM658:4 null
+VM658:5 null
+undefined
+console.log(document.querySelector('a').firstChild.nodeValue); 
+VM659:2 Hi
+undefined
+
+*/
+```
 
 
 
