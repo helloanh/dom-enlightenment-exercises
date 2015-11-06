@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+		<a href="#">Hi</a>
+		<script>
+		/* This is DOCUMENT_TYPE_NODE or nodeType 10
+		because Node.DOCUMENT_TYPE_NODE === 10 */
+		console.log(document.doctype.nodeName, document.doctype.nodeType);
+
+		//This is DOCUMENT_NODE or nodeType 9 because Node.DOCUMENT_NODE === 9
+		console.log(document.nodeName, document.nodeType);
+
+		/* This is DOCUMENT_FRAGMENT_NODE or nodeType 11
+		because Node.DOCUMENT_FRAGMENT_NODE === 11 */
+
+		console.log(
+			document.createDocumentFragment().nodeName,
+			document.createDocumentFragment().nodeType
+		);
+
+		//This is ELEMENT_NODE or nodeType 1 because Node. ELEMENT_NODE === 1
+		console.log(
+			document.querySelector('a').nodeName, 
+			document.querySelector('a').nodeType
+		);
+
+
+
+		//This is TEXT_NODE or nodeType 3 because Node.TEXT_NODE === 3
+		console.log( 
+			document.querySelector('a').firstChild.nodeName, 
+			document.querySelector('a').firstChild.nodeType 
+		);
+
+		</script>
+	</body>
+</html>
