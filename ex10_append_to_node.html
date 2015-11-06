@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 	<body>
-		<p>Hi</p>
+		<p>Test, I am inside p tag.  </p>
+
+		<ul>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+
 		<script>
 		//create a blink element node and text node
 		var elementNode = document.createElement('strong');
-		var textNode = document.createTextNode(' Dude');
+		var textNode = document.createTextNode('this should be bold');
 		
 		//append these nodes to the DOM
 		document.querySelector('p').appendChild(elementNode); 
 		document.querySelector('strong').appendChild(textNode);
 
 		//log's <p>Hi<strong> Dude</strong></p>
-		console.log(document.body.innerHTML);
+		//console.log(document.body.innerHTML);
 		</script>
 	</body>
 </html>

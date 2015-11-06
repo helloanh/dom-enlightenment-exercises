@@ -174,7 +174,57 @@ console.log(document.getElementById('A').textContent);
 
 +  if there is no child node, the node being appended will be the first child node  
 
+``` javascript
+// console log
 
+// create the txt node
+var tx = document.createTextNode('testing testing')
+undefined
+
+tx
+"testing testing"
+
+// create the list element
+var li = document.createElement('li');
+undefined
+
+// add txt node in li
+li.appendChild(tx);
+"testing testing"
+li
+<li>​testing testing​</li>​
+
+// grab the ul tag in the DOM
+
+var ul = document.querySelector('ul')
+undefined
+ul
+<ul>​
+	<li>​1​</li>​
+	<li>​2​</li>​
+	<li>​3​</li>​
+</ul>​
+
+// insert the li in the selected ul as the first child
+ul.insertBefore(li, ul.firstChild);
+<li>​testing testing​</li>​
+
+// view the html document 
+console.log(document.body.innerHTML);
+VM11591:2 
+		<p>Test, I am inside p tag.  
+			<strong>this should be bold</strong>
+		</p>
+
+		<ul>
+			<li>testing testing</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+
+undefined
+```
 
 
 
