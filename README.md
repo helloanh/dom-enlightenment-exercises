@@ -1,7 +1,9 @@
 ## DOM Enlightenment  
-notes and exercises for the textbook with the same name by Cody Lindley  
+notes and exercises based on the DOM Enlightenment: Exploring Javascript and the Modern DOM textbook by Cody Lindley  
 
 ### Table of Contents
+
+```
 
 ├── README.md  
 └── chapter1-node-overview  
@@ -13,3 +15,5 @@ notes and exercises for the textbook with the same name by Cody Lindley
     ├── ex7_create_element_and_txt_nodes.html
     ├── ex8_create_add_element_to_DOM.html
     └── ex9_extracting_parts_of_the_DOM.html
+
+```
