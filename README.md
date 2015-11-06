@@ -1,5 +1,5 @@
 ## DOM Enlightenment  
-notes and exercises for book with the same name by Cody Lindley  
+notes and exercises for the textbook with the same name by Cody Lindley  
 
 ### Ch1 - Node Overview    
 
@@ -225,8 +225,75 @@ VM11591:2
 
 undefined
 ```
+### 1.11 removeChild() and replaceChild() to Remove and Replace Nodes  
+
+Removing a node form the DOM requires several steps:  
+	1.  select the node you want to remove  
+	2.  gain access to its parent element, usu by using **parentNode** property  
+	3.  on the parent node, invoke the **removeChild()**, passing it the reference to the node to be removed  
+
+``` 
+// html file, in ex10 
+<div id="A">Hi</div>
+<div id="B">Dude</div>
+
+// console code 
+
+var divA = document.getElementById('A');
+undefined
+
+divA
+<div id=​"A">​Hi​</div>​
+
+// divA is removed
+divA.parentNode.removeChild(divA)
+<div id=​"A">​Hi​</div>​
 
 
+// only grabbing the "Dude" text
+var divB = document.getElementById('B').firstChild;
+undefined
+
+divB
+"Dude"
+
+// note how the div is still there, only the text is removed  
+divB.parentNode.removeChild(divB);
+"Dude"
+
+console.log(document.body.innerHTML);
+VM13778:2 
+		<p>Test, I am inside p tag.  </p>
+
+		<ul>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+
+		<!-- for testing ex 11 -->
+		
+		<div id="B"></div>
+
+
+		<script>
+		//create a blink element node and text node
+		// var elementNode = document.createElement('strong');
+		// var textNode = document.createTextNode('this should be bold');
+		
+		// //append these nodes to the DOM
+		// document.querySelector('p').appendChild(elementNode); 
+		// document.querySelector('strong').appendChild(textNode);
+
+		//log's <p>Hi<strong> Dude</strong></p>
+		//console.log(document.body.innerHTML);
+		</script>
+	
+
+undefined 
+```
+
+
+	
 
 
 
