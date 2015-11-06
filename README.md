@@ -168,6 +168,16 @@ console.log(document.getElementById('A').textContent);
 
 + the textContent, innerText, and outerText while being read, will return all the text nodes contained within the selected node  
 
+### 1.0 Using appendChild() and insertBefore() to add node Objects to the DOM  
+
++  appendChild() - append a node or multiple nodes to the end of the child node(s) of the node the method is called on  
+
++  if there is no child node, the node being appended will be the first child node  
+
+
+
+
+
 
 
 
