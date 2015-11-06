@@ -332,8 +332,87 @@ VM15015:2
 undefined
 
 ```
+
+### 1.12 cloneNode() to Clone Nodes  
+
++ user cloneNode() to clone elements,  you need to add the extra **true** params to clone all child nodes   
+
++ note: cloneNode() may lead to duplicate element IDs in a document   
+
+``` javascript
+var cloneUL = document.querySelector('ul').cloneNode();
+undefined
+
+cloneUL
+<ul>​</ul>​
+
+console.log(cloneUL.constructor);
+VM15525:2 HTMLUListElement() { [native code] }
+undefined
+
+console.log(cloneUL.innerHTML);
+undefined
+
+// using cloneNode with true params 
+var cloneUL2 = document.querySelector('ul').cloneNode(true);
+undefined
+cloneUL2
+<ul>​<li>​2​</li>​<li>​3​</li>​</ul>​
+
+console.log(cloneUL2.constructor);
+HTMLUListElement() { [native code] }
+undefined
+
+console.log(cloneUL2.innerHTML); 
+			<li>2</li>
+			<li>3</li>
+		
+undefined
+	
+```
 	
 
+### 1.15 Converting a NodeList or HTMLCollection to a JS Array  
+
++ benefits of converting nodelist or html collection to true JS array:  
+
+	1. create a snapshot of the list that is not tied to the live DOM, since nodelist and html collection are live lists  
+
+	2.   gives access to the methods provided by the Array object (ie forEach, pop, map, reduce, etc)  
+
+
++ to convert an array-like list, pass the array-like list to call() or apply()  
+
+
+``` javascript
+// returns false, it's an HTMLCollection not an Array  
+Array.isArray(document.links);  
+
+// returns false, it's a NodeList not an Array  
+Array.isArray(document.querySelectorAll('a')); 
+
+```
+
++ use the slice() method, which doesn't slice anything but it is used to convert the list to a JS Array  
+
+### 1.1.6 Traversing Nodes in the DOM  
+
+Using the following properties:  
+	+ parentNode  
+	+ firstChild  
+	+ lastChild  
+	+ nextSibling  
+	+ previousSibling  
+
+Traversing the DOM includes traversing not just element nodes but also text and comment nodes.  Sometimes this is not ideal.  
+
+Using the following properties, traverse the DOM while ignoring the text and comment nodes:  
+	+ firstElementChild   
+	+ lastElementChild  
+	+ nextElementChild   
+	+ previousElementChild 
+	+ children  
+	+ parentElement 
 
 
 

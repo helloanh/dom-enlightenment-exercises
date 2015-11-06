@@ -56,3 +56,10 @@ console.log(atts.getAttribute('foo'));
 console.log(atts.getAttribute('hidden'));
 ```
 
+**Add and remove subvalues to a class values is easy:**    
+	.add('nameofclass')  
+	.remove('nameofclass')    
+
+check by calling .className() on element with the class  
+
+
